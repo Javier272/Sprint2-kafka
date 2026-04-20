@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.lta.backend</groupId>
+	<artifactId>str-producer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>str-producer</name>
+	<description>Demo project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<!-- Dependencia para crear aplicaciones web con Spring Boot -->
+		<!-- Incluye Spring MVC, servidor embebido (Tomcat), JSON (Jackson), etc. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Soporte para integrarse con Apache Kafka -->
+		<!-- Permite crear productores y consumidores Kafka usando Spring -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+
+		<!-- Librería Lombok para reducir el código boilerplate -->
+		<!-- Permite usar anotaciones como @Getter, @Setter, @Data, etc. -->
+		<!-- La etiqueta <optional>true</optional> indica que no es obligatoria para otros módulos que dependan de este -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Dependencia para pruebas unitarias y de integración en Spring Boot -->
+		<!-- Incluye JUnit, AssertJ, Hamcrest, Mockito, etc. -->
+		<!-- Solo se utiliza durante la fase de pruebas (scope test) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Herramientas específicas para probar integración con Kafka -->
+		<!-- Permite crear brokers embebidos, consumir eventos en pruebas, etc. -->
+		<!-- Solo se utiliza en pruebas (scope test) -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

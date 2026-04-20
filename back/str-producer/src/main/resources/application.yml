@@ -1,0 +1,12 @@
+# Configuración del servidor web embebido de Spring Boot
+server:
+  port: 8000       # El servidor (por defecto Tomcat) escuchará en el puerto 8000 en vez del 8080
+
+# Configuración específica para Apache Kafka
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092  # Dirección del broker Kafka al que se conectará el productor para enviar mensajes
+
+#Similar a application.properties se coloca en src/main/resources/, y tiene el mismo propósito que application.yml: 
+#configurar parámetros del servidor, Kafka, base de datos, etc.
