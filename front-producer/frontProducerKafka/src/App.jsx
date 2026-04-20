@@ -25,7 +25,6 @@ function App() {
         </button>
       </div>
 
-      {/* Renderizado condicional de las aplicaciones */}
       {vistaActual === 'doctores' ? <SistemaDoctores /> : <SistemaVisualizacion />}
       
     </div>

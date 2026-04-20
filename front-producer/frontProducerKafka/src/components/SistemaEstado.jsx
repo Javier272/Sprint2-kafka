@@ -24,7 +24,6 @@ export default function SistemaVisualizacion() {
     return (
         <div style={{ padding: '20px', border: '1px solid #17a2b8', borderRadius: '8px' }}>
             <h2>Sistema de Estados</h2>
-            <p>Solicita el estado actual o el historial médico de un paciente.</p>
 
             <form onSubmit={solicitarVisualizacion} style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '300px', marginTop: '20px' }}>
                 <select value={consulta.tipoConsulta} onChange={(e) => setConsulta({...consulta, tipoConsulta: e.target.value})}>
