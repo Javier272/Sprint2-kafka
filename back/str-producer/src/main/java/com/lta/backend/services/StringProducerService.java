@@ -14,23 +14,8 @@ public class StringProducerService {
     private KafkaTemplate<String, String> kafkaTemplate;
 
   
-    public void sendMessage(String message) {
-        // Se determina el tópico según si el mensaje contiene la palabra "topico 2"
-        // (ignorando mayúsculas o minúsculas).
-        String topic = message.toLowerCase().contains("topico 2") ? "topico-2" : "str-topic";
-
-        // Se determina la partición basada en el contenido del mensaje.
-        // Si el mensaje contiene "hola" → partición 0,
-        // si contiene "adios" → partición 1,
-        // si no contiene ninguno → partición 0 por defecto.
-        int partition;
-        if (message.toLowerCase().contains("hola")) {
-            partition = 0;
-        } else if (message.toLowerCase().contains("adios")) {
-            partition = 1;
-        } else {
-            partition = 0; // por defecto
-        }
+    public void sendMessage(String topic,int partition, String message) {
+        
 
 
         /*

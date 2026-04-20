@@ -38,8 +38,9 @@ public class KafkaAdminConfig {
     public KafkaAdmin.NewTopics topics(){
         return new KafkaAdmin.NewTopics(
             // Se construye un tópico llamado "str-topic" con 2 particiones y 1 réplica.
-            TopicBuilder.name("str-topic").partitions(2).replicas(1).build(),
-            TopicBuilder.name("topico-2").partitions(2).replicas(1).build() 
+            TopicBuilder.name("gestion-pacientes").partitions(3).replicas(1).build(),
+            TopicBuilder.name("gestion-citas").partitions(3).replicas(1).build(),
+            TopicBuilder.name("estado-paciente").partitions(2).replicas(1).build()
         );
     }
 }
